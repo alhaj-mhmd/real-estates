@@ -1,7 +1,7 @@
 
 <?php 
 
-$page_title = "Contact Us";
+$page_title = "Testimonial";
  // Initialize the session
 session_start();
 include_once 'header.php';

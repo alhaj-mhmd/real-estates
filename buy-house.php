@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($stmt_update = $pdo->prepare($sql_update)) {
         // Attempt to execute the prepared statement
         if ($stmt_update->execute()) {
-            $page_title = "Update Contact";
+            $page_title = "Update House";
             include_once 'header.php'; ?>
             <div class="container">
                 <div class="row">
@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <div class="alert alert-success  mt-5">
                            you have bought this house
                         </div>
-                        <a href="houses.php" class="btn badge-info">Houses</a>
+                        <a href="houses-catalog.php" class="btn badge-info">Houses</a>
                          
                        
                   </div>

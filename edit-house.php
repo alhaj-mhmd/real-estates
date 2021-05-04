@@ -3,7 +3,7 @@
 require_once "config.php";
 if (isset($_POST['id']) && $_POST['id'] != null) {
     $id = $_POST['id'];
-    $sql = "SELECT * FROM contacts WHERE id = '$id'";
+    $sql = "SELECT * FROM houses WHERE id = '$id'";
     $result = $pdo->query($sql);
     $row = $result->fetch();
 }
@@ -13,7 +13,7 @@ if (isset($_POST['id']) && $_POST['id'] != null) {
 unset($pdo);
 
 ?>
-<?php $page_title = "Edit Contact";
+<?php $page_title = "Edit House";
 include_once 'header.php'; ?>
 <?php
 session_start();
@@ -22,9 +22,9 @@ include('nav.php');  ?>
 <div class="container">
     <div class="row">
         <div class="col-sm-12 text-center">
-            <h2>Edit Contact</h2>
-            <p class="alert alert-info">Please fill this form to edit contact.</p>
-            <form action="update-contact.php" method="post">
+            <h2>Edit House</h2>
+            <p class="alert alert-info">Please fill this form to edit house.</p>
+            <form action="update-house.php" method="post">
                 <input type="hidden" name="id" value="<?php echo $row['id'] ?>">
 
                 <div class="form-group ">
@@ -53,7 +53,7 @@ include('nav.php');  ?>
                     <input type="submit" class="btn btn-primary" value="Update">
                     <input type="reset" class="btn btn-default" value="Reset">
                 </div>
-                <p>Go to my contacts <a href="contacts.php">My Contacts</a></p>
+                <p>Go to my houses <a href="houses.php">My Houses</a></p>
             </form>
         </div>
     </div>

@@ -166,7 +166,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
  
 ?>
-<?php $page_title = "Create Contact";
+<?php $page_title = "Create House";
 include_once 'header.php'; ?>
 
 <?php include('nav.php');  ?>
@@ -221,7 +221,7 @@ include_once 'header.php'; ?>
     </div>
     <div class="row mb-5 mt-3">
         <dic class="col-12 text-center">
-            <p>Go to <a href="contacts.php">My Contacts</a></p>
+            <p>Go to <a href="houses.php">My Houses</a></p>
         </dic>
     </div>
 </div>

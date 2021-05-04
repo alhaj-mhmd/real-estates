@@ -1,5 +1,5 @@
 <?php
-$page_title = "Contacts";
+$page_title = "Houses";
 // Initialize the session
 session_start();
 
@@ -75,13 +75,13 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                             echo "<td>" . $row['price'] . "</td>";
                             echo "<td>" . $row['sold'] . "</td>";
                             echo '<td>
-                                    <form action="delete-contact.php" method="post">
+                                    <form action="delete-house.php" method="post">
                                         <input type="hidden" name="id" value="' . $row["id"] . '">
                                         <input class=" alert alert-danger" type="submit" name="submit" value="Delete">
                                     </form>   
                                         </td>';
                             echo '<td >
-                                        <form action="edit-contact.php" method="post">
+                                        <form action="edit-house.php" method="post">
                                                 <input type="hidden" name="id" value="' . $row["id"] . '">
                                                 <input class=" alert alert-info" type="submit" name="submit" value="Edit">
                                             </form>
