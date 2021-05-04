@@ -16,16 +16,22 @@ require_once "config.php"; ?>
                 while ($row = $result->fetch()) {
                     echo ' 
           <div class="col-xs-6 col-md-4 mb-5">
-              <div class="product tumbnail thumbnail-3"><a href="#"><img src="./img/houses/'.$row['image'].'" alt=""></a>
+              <div class="product tumbnail thumbnail-3"><a href="#"><img src="./img/houses/' . $row['image'] . '" alt=""></a>
                   <div class="caption">
-                      <span class="text-success">Area: '.$row['area'].'</span>
-                      <span class="text-primary">Floor: '.$row['floor'].'</span>
-                      <span class="text-dark">Rooms: '.$row['rooms'].'</span><br>
-                      <h6 class="price">Price:'.$row['price'].'</h6>
-                      <form action="buy-house.php" method="post">
-                      <input type="hidden" name="id" value="' . $row["id"] . '">
-                      <input type="submit" name="submit" value="Buy">
-                  </form>
+                      <span class="text-success">Area: ' . $row['area'] . '</span>
+                      <span class="text-primary">Floor: ' . $row['floor'] . '</span>
+                      <span class="text-dark">Rooms: ' . $row['rooms'] . '</span><br>
+                      <h6 class="price">Price:' . $row['price'] . '</h6>';
+                      if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
+                        echo' <form action="buy-house.php" method="post">
+                        <input type="hidden" name="id" value="' . $row["id"] . '">
+                        <input type="submit" name="submit" value="Buy">
+                      </form>';
+                    } else {
+                       echo'<h6 class="text-danger">Login To Buy</h6>';
+                    }
+                 
+                    echo'
                   </div>
               </div>
           </div>';

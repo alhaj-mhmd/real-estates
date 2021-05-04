@@ -61,12 +61,12 @@
         $total_pages = ceil($total_pages_total_rows / $no_of_records_per_page);
         // define the list of fields
         if ($_SERVER["REQUEST_METHOD"] == "GET") {
-            $area = $_GET['area'];
-            $rooms = $_GET['rooms'];
-            $floor = $_GET['floor'];
-            $address = $_GET['address'];
-            $cladding_level = $_GET['cladding_level'];
-            $price = $_GET['price'];
+            if(isset($_GET['area'])){ $area = $_GET['area']; }
+            if(isset($_GET['rooms'])) {$rooms = $_GET['rooms'];}
+            if(isset($_GET['floor'])) {$floor = $_GET['floor'];}
+            if(isset($_GET['address'])) {$address = $_GET['address'];}
+            if(isset($_GET['cladding_level'])) {$cladding_level = $_GET['cladding_level'];}
+            if(isset($_GET['price'])) {$price = $_GET['price'];}
             $fields = array('area', 'rooms', 'floor',   'cladding_level', 'price');
             $conditions = array();
 
@@ -115,12 +115,17 @@
                                         <input type="submit" name="submit" value="Details">
                                     </form>
                                 </td>';
-                            echo '<td>
+                                if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == true) {
+                                    echo '<td>
                                     <form action="buy-house.php" method="post">
                                         <input type="hidden" name="id" value="' . $row["id"] . '">
                                         <input type="submit" name="submit" value="Buy">
                                     </form>
                                 </td>';
+                                } else {
+                                   echo'<td class="text-danger">Login To Buy</td>';
+                                }
+                           
                             echo "</tr>";
                         }
                         echo "</table>";

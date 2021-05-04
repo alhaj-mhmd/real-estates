@@ -32,10 +32,11 @@
         <li class="nav-item">
           <a class="nav-link" href="houses.php">My Houses</a>
         </li>
-        <li class="nav-item">
+        
+      <?php } ?>
+      <li class="nav-item">
           <a class="nav-link" href="houses-catalog.php">Buy House</a>
         </li>
-      <?php } ?>
       <li class="nav-item">
         <a class="nav-link" href="search.php">Search</a>
       </li>
